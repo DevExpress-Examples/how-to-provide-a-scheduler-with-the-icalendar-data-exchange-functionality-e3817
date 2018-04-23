@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="SilverlightApplication1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduler"
+    mc:Ignorable="d"
+    d:DesignHeight="590" d:DesignWidth="783" >
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--region #SchedulerControl_Drop-->
+        <dxsch:SchedulerControl Name="schedulerControl1" 
+                                Grid.Column="1"
+                                VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  
+                                ActiveViewType="WorkWeek" Drop="schedulerControl1_Drop">
+        </dxsch:SchedulerControl>
+        <!--endregion #SchedulerControl_Drop-->
+        
+        <Button Content="Import" 
+                Margin="12,12,12,0" Height="23" Width="75"
+                VerticalAlignment="Top"
+                Grid.Column="0" 
+                Click="Import_Button_Click"/>
+        <Button Content="Export" 
+                Margin="12,47,12,0" Height="23" Width="75"
+                VerticalAlignment="Top"
+                Grid.Column="0"
+                Click="Export_Button_Click"/>
+    </Grid>
+</UserControl>
